@@ -1,0 +1,80 @@
+.postItem {
+    position: relative;
+    border-bottom: 1px solid black;
+    padding-bottom: 49px;
+    padding: 100px 0;
+}
+
+.postItem .container {
+    width: 620px;
+    margin: auto;
+}
+
+
+.postTitle {
+    width: 391px;
+    margin: auto;
+    margin-top: 29px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.postItem .postDescription,
+.postDate,
+.readMore {
+    width: 450px;
+    margin: auto;
+}
+
+.postDescription {
+    text-align: justify;
+    margin-top: 20px;
+}
+
+.postItem .postDate,
+.postDetail .postDate {
+    text-transform: capitalize;
+    font-size: 10px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.postItem .readMore {
+    margin-top: 50px;
+}
+
+.readMore a {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    min-width: 120px;
+    height: 53px;
+    font-size: 15px;
+}
+
+.customPostImage {
+    position: relative;
+    width: 100%;
+}
+
+.customPostImage img {
+    width: 100%;
+}
+
+.postDetail {
+    width: 800px;
+    margin: auto;
+    padding: 100px 0;
+}
+
+.postDetail .postDate {
+    justify-content: flex-start;
+    width: 391px;
+    margin: auto;
+    margin-top: 11px;
+    margin-bottom: 30px;
+}
