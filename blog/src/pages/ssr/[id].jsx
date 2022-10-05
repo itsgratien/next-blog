@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import PostDetail from "@/components/Post/PostDetail";
+import axios from "@/utils/AxiosInstance";
 
 const ViewPost = () => {
   return (

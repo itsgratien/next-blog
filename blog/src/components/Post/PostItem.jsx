@@ -4,25 +4,32 @@ import Link from "next/link";
 import PostImage from "./PostImage";
 import PostDescription from "./PostDescription";
 
-const PostItem = () => {
+const PostItem = ({ item, renderingMethod }) => {
+  if (!item) {
+    return null;
+  }
+
+  const handleSlice = (number, value) => {
+    if (value.length <= number) {
+      return value;
+    } else {
+      //
+      const newValue = value.slice(0, number);
+
+      return `${newValue} ...`;
+    }
+  };
   return (
     <div className={style.postItem}>
       <div className={style.container}>
-        <PostImage
-          src={`https://images.unsplash.com/photo-1545665277-5937489579f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80`}
-          height="300px"
-        />
-        <div className={style.postTitle}>
-          How I Joined Dev Junction attended
+        <PostImage src={item.image} height="300px" />
+        <div className={style.postTitle}>{item.title}</div>
+        <div className={style.postDate}>
+          PUBLISHED ON {new Date(item.createdAt).toDateString()}
         </div>
-        <div className={style.postDate}>PUBLISHED ON JUNE 26TH 2022</div>
-        <PostDescription
-          description={`Lorem ipsum rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum Lorem
-          ipsum rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum Lorem ipsum
-          rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum`}
-        />
+        <PostDescription description={handleSlice(187, item.description)} />
         <div className={style.readMore}>
-          <Link href={"/"}>
+          <Link href={`/${renderingMethod}/${item.id}`}>
             <a>Read More</a>
           </Link>
         </div>

@@ -2,8 +2,10 @@ import Head from "next/head";
 import styles from "src/styles/Home.module.css";
 import Layout from "@/components/Layout";
 import PostItem from "@/components/Post/PostItem";
+import axios from "@/utils/AxiosInstance";
+import NotFound from "@/components/NotFound";
 
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,8 +15,19 @@ const Home = () => {
       </Head>
       <Layout>
         <div className={styles.showcase}>
-          <PostItem />
-          <PostItem />
+          {data && (
+            <>
+              {data.length > 0 ? (
+                <>
+                  {data.map((item) => (
+                    <PostItem item={item} key={item.id} renderingMethod="ssg" />
+                  ))}
+                </>
+              ) : (
+                <NotFound />
+              )}
+            </>
+          )}
         </div>
       </Layout>
     </div>
@@ -22,3 +35,22 @@ const Home = () => {
 };
 
 export default Home;
+
+export const getStaticProps = async () => {
+  try {
+    const res = await axios.get("/post");
+
+    return {
+      props: {
+        data: res.data.data,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        destination: "/error",
+        permanent: false,
+      },
+    };
+  }
+};

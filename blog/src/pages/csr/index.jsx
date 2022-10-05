@@ -2,8 +2,12 @@ import Head from "next/head";
 import styles from "src/styles/Home.module.css";
 import Layout from "@/components/Layout";
 import PostItem from "@/components/Post/PostItem";
+import useGetPosts from "src/hooks/useGetPosts";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 const Home = () => {
+  const { data, loading } = useGetPosts();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,8 +17,20 @@ const Home = () => {
       </Head>
       <Layout>
         <div className={styles.showcase}>
-          <PostItem />
-          <PostItem />
+          {loading && <LoadingSpinner />}
+          {data && (
+            <>
+              {data.length > 0 ? (
+                <>
+                  {data.map((item) => (
+                    <PostItem item={item} key={item.id} renderingMethod="csr" />
+                  ))}
+                </>
+              ) : (
+                ""
+              )}
+            </>
+          )}
         </div>
       </Layout>
     </div>
