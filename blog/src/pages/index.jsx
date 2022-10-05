@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import PostItem from "@/components/Post/PostItem";
 import axios from "@/utils/AxiosInstance";
 import NotFound from "@/components/NotFound";
+import Heading from "@/components/Heading";
 
 const Home = ({ data }) => {
   if (!data) {
@@ -21,6 +22,7 @@ const Home = ({ data }) => {
         <div className={styles.showcase}>
           {data && data.length > 0 ? (
             <>
+              <Heading title={"Used GetServerSideProps"} />
               {data.map((item) => (
                 <PostItem key={item.id} item={item} renderingMethod="ssr" />
               ))}

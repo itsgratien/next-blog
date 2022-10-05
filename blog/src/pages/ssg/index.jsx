@@ -5,6 +5,7 @@ import PostItem from "@/components/Post/PostItem";
 import axios from "@/utils/AxiosInstance";
 import NotFound from "@/components/NotFound";
 import classname from "classnames";
+import Heading from "@/components/Heading";
 
 const Home = ({ data }) => {
   return (
@@ -18,6 +19,7 @@ const Home = ({ data }) => {
         <div className={classname(styles.showcase, styles.showcaseSsg)}>
           {data && (
             <>
+              <Heading title={"Used GetStaticProps"} />
               {data.length > 0 ? (
                 <>
                   {data.map((item) => (

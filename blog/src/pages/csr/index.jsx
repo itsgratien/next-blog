@@ -5,6 +5,7 @@ import PostItem from "@/components/Post/PostItem";
 import useGetPosts from "src/hooks/useGetPosts";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import classname from "classnames";
+import Heading from "@/components/Heading";
 
 const Home = () => {
   const { data, loading } = useGetPosts();
@@ -21,6 +22,7 @@ const Home = () => {
           {loading && <LoadingSpinner />}
           {data && (
             <>
+              <Heading title={"Used ClientSide"} />
               {data.length > 0 ? (
                 <>
                   {data.map((item) => (
