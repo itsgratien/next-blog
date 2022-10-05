@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import PostItem from "@/components/Post/PostItem";
 import axios from "@/utils/AxiosInstance";
 import NotFound from "@/components/NotFound";
+import classname from "classnames";
 
 const Home = ({ data }) => {
   return (
@@ -14,7 +15,7 @@ const Home = ({ data }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className={styles.showcase}>
+        <div className={classname(styles.showcase, styles.showcaseSsg)}>
           {data && (
             <>
               {data.length > 0 ? (

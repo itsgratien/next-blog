@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import PostItem from "@/components/Post/PostItem";
 import useGetPosts from "src/hooks/useGetPosts";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import classname from "classnames";
 
 const Home = () => {
   const { data, loading } = useGetPosts();
@@ -16,7 +17,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className={styles.showcase}>
+        <div className={classname(styles.showcase, styles.showcaseCsr)}>
           {loading && <LoadingSpinner />}
           {data && (
             <>

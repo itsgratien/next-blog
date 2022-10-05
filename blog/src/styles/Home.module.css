@@ -5,6 +5,14 @@
   width: 100%;
 }
 
+.showcaseSsg {
+  background: #00ffd3 !important;
+}
+
+.showcaseCsr {
+  background: linear-gradient(180deg, rgba(20, 0, 255, 0.04) 0%, rgba(255, 230, 0, 0.17) 30.73%, rgba(255, 230, 0, 0) 51.04%);
+}
+
 .setupPost {
   width: 600px;
   margin: auto;

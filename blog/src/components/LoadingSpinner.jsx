@@ -8,6 +8,7 @@ const LoadingSpinner = () => {
         justifyContent: "center",
         alignItems: "center",
         fontWeight: "bold",
+        paddingTop: "30px",
       }}
     >
       Loading...
