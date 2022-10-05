@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Post.module.css";
 
-const PostDescription = ({ description }) => {
+const PostDescription = ({ description, width }) => {
   return (
     <div
       className={style.postDescription}

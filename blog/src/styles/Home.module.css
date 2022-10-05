@@ -4,3 +4,23 @@
   position: relative;
   width: 100%;
 }
+
+.setupPost {
+  width: 600px;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.setupPost .group {
+  margin-top: 30px;
+}
+
+.setupPost button {
+  padding: 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  min-width: 150px;
+  font-weight: bold;
+  cursor: pointer;
+}

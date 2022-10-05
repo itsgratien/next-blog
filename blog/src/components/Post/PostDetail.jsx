@@ -15,8 +15,10 @@ const PostDetail = () => {
       <PostDescription
         description={`Lorem ipsum rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum Lorem
           ipsum rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum Lorem ipsum
+          rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum Lorem
+          ipsum rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum Lorem ipsum
           rwanda lorem ipsum Lorem ipsum rwanda lorem ipsum`}
-        width="550px"
+        width="500px"
       />
     </div>
   );

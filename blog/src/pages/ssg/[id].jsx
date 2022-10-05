@@ -7,7 +7,7 @@ const ViewPost = () => {
   return (
     <>
       <Head>
-        <title>SSR | Post Detail</title>
+        <title>Post Detail | SSG</title>
       </Head>
       <Layout>
         <PostDetail />

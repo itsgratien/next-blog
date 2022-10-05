@@ -16,7 +16,7 @@ const Header = () => {
         <div className={style.left}>
           <Menu />
           <div className={style.newPost}>
-            <Link href={"/home"}>
+            <Link href={"/create"}>
               <a>
                 <span>New Post</span>
                 <button type="button">+</button>
