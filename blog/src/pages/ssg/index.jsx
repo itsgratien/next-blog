@@ -50,10 +50,7 @@ export const getStaticProps = async () => {
     };
   } catch (error) {
     return {
-      redirect: {
-        destination: "/error",
-        permanent: false,
-      },
+      notFound: true,
     };
   }
 };

@@ -49,10 +49,7 @@ export const getServerSideProps = async () => {
     };
   } catch (error) {
     return {
-      redirect: {
-        destination: "/error",
-        permanent: false,
-      },
+      notFound: true,
     };
   }
 };
