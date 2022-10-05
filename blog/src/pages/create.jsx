@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Layout from "@/components/Layout";
 import PostInput from "@/components/Post/PostInput";
 import PostEditor from "@/components/Post/PostEditor";
+import useCreatePost from "src/hooks/useCreatePost";
 
 const SetupPost = () => {
   const [title, setTitle] = React.useState("");
@@ -11,6 +12,21 @@ const SetupPost = () => {
   const [image, setImage] = React.useState("");
 
   const [description, setDescription] = React.useState("");
+
+  const { error, loading, handleSubmit, message } = useCreatePost();
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await handleSubmit({ title, image, description });
+  };
+
+  React.useEffect(() => {
+    if (message) {
+      setTitle("");
+      setDescription("");
+      setImage("");
+    }
+  }, [message]);
 
   return (
     <div className={styles.container}>
@@ -44,7 +60,9 @@ const SetupPost = () => {
             />
           </div>
           <div className={styles.group}>
-            <button type="button">Submit</button>
+            <button type="button" onClick={onSubmit} disabled={loading}>
+              {loading ? "loading ..." : "Submit"}
+            </button>
           </div>
         </div>
       </Layout>
