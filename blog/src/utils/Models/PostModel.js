@@ -15,7 +15,7 @@ export const Post = sequelize.define("Post", {
     },
   },
   description: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false,
     validate: {
       notNull: {
