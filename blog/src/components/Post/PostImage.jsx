@@ -15,6 +15,7 @@ const PostImage = ({ src, height }) => {
           borderRadius: "5px",
           objectFit: "cover",
         }}
+        alt="image"
       />
     </div>
   );
