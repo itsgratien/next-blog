@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import Layout from "@/components/Layout";
 import PostInput from "@/components/Post/PostInput";
 import PostEditor from "@/components/Post/PostEditor";
-import useCreatePost from "src/hooks/useCreatePost";
+import useCreatePost from "@/hooks/useCreatePost";
 
 const SetupPost = () => {
   const [title, setTitle] = React.useState("");

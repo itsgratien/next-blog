@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import PostDetail from "@/components/Post/PostDetail";
-import useGetPost from "src/hooks/useGetPost";
+import useGetPost from "@/hooks/useGetPost";
 import { useRouter } from "next/router";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import NotFound from "@/components/NotFound";
